@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Toast</title>
+</head>
+<body>
+    <button>success</button>
+    <button>danger</button>
+    <!-- <div class="toast"></div> -->
+    <script src="index.js"></script>
+    <script>
+        // const showMsgBtn = document.querySelector('button');
+        // showMsgBtn.addEventListener('click',()=>toast('سلام عزیزی',1000));
+        const toast = new Toast();
+        document.querySelectorAll('button').forEach( (btn) =>{
+            btn.addEventListener('click', ()=>{
+            toast.show('message 1',btn.innerText)
+        })
+        
+        })
+        // toast.show('message 1');
+        // toast.show('message 2');
+        // toast.show('message 3');
+        // toast.show('message 2');
+    </script>
+</body>
+</html>
