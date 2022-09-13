@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        input:invalid{
+            border: 2px solid red;
+        }
+    </style>
+    
+    <form action="">
+        <div>
+            <label for="text_input">متن را وارد کنید</label>
+            <input name="text_input" type="text" required minlength="8">
+        </div>
+        <div>
+            <button type="summit">ثبت کنید.</button>
+        </div>
+
+<script>
+
+// const form = document.querySelector("form");
+// console.log(form.checkValidity());
+const textInput = document.querySelector("input");
+// console.log(textInput.validity);
+textInput.addEventListener('input', (event)=>{
+    const target = event.target;
+    if(target.validity.tooShort) {
+        target.setCustomValidity("تعداد کاراکترهای مجاز رعایت نشده است.");
+        console.log('saeid')
+    } else {
+        target.setCustomValidity("");
+    }
+})
+</script>
+
+    </form>
+</body>
+</html>

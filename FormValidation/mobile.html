@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mobile number validation</title>
+    <style>
+      body {
+        background-color: aqua;
+      }
+      form {
+        background-color: white;
+        display: flex;
+        height: 300px;
+        width: 300px;
+      }
+      form div {
+        margin-top: 10px;
+      }
+      form button {
+        width: 40px;
+        background-color: green;
+        height: 30px;
+        margin: 10px 20px;
+        align-items: flex-start;
+      }
+      small {
+        font-size: 14px;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <div>
+        <label for="phoneNumber">موبایل</label>
+        <input
+          type="text"
+          name="phoneNumber"
+          required
+          pattern="09(1[0-9]|3[1-9]|2[1|9])-?[0-9]{3}-?[0-9]{4}"
+        />
+        <small hidden> لطفا شماره موبایل را با فرمت درست وارد کنید</small>
+      </div>
+      <button type="submit">ثبت</button>
+
+      <script>
+        const phoneNumber = document.querySelector("input");
+        const error = document.querySelector("small")
+        phoneNumber.addEventListener("input", (event) => {
+          const { target } = event;
+          console.log(target.validity);
+          error.hidden=true;
+          if (target.validity.patternMismatch) {
+            error.hidden = false;
+          }
+        });
+      </script>
+    </form>
+  </body>
+</html>
