@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Document</title>
+  </head>
+
+    <div class="action">
+      <div class="profile">
+        <img src="img/myself.png" alt="my_Picture" />
+      </div>
+
+      <div class="menu">
+        <h3>محمد سعید میراخورلو<br /><span>برنامه نویس</span></h3>
+        <ul>
+          <li><i class="fa fa-user" aria-hidden="true"></i><a href="">پروفایل من</a></li>
+          <li><i class="fa fa-circle-info" ></i><a href="">تغییر اطلاعات</a></li>
+          <li><i class="fa fa-messages"></i><a href=""> پیام‌ها</a></li>
+          <li><i class="fa fa-gear"></i><a href="">تنظیمات</a></li>
+          <li><i class="fa fa-face-smiling-hands"></i><a href="">پشتیبانی</a></li>
+          <li><i class="fa fa-arrow-right-from-arc"></i><a href="">خروج</a></li>
+        </ul>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/all.min.js"></script>
+    <script>
+      const act = document.querySelector('.action');
+      act.addEventListener('click',()=>{
+        const togglemenu = document.querySelector('.menu')
+        togglemenu.classList.toggle('active')});
+    </script>
+  </body>
+</html>
